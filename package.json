@@ -1,0 +1,42 @@
+{
+  "name": "mmall_admin_fe",
+  "version": "1.0.0",
+  "description": "admin.happymall.shop",
+  "main": "index.js",
+  "scripts": {
+    "dev": "WEBPACK_ENV=dev webpack-dev-server --host 0.0.0.0  --progress --config webpack.config.js --inline",
+    "dev_win": "set WEBPACK_ENV=dev && webpack-dev-server --port 8086 --inline",
+    "dist": "WEBPACK_ENV=online webpack -p",
+    "dist_win": "set WEBPACK_ENV=online && webpack -p"
+  },
+  "author": "pybyongbo",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.2",
+    "babel-plugin-import": "^1.6.5",
+    "babel-preset-env": "1.6.1",
+    "babel-preset-react": "6.24.1",
+    "css-loader": "0.28.8",
+    "extract-text-webpack-plugin": "3.0.2",
+    "file-loader": "1.1.6",
+    "node-sass": "4.7.2",
+    "sass-loader": "6.0.6",
+    "style-loader": "0.19.1",
+    "url-loader": "0.6.2",
+    "webpack": "3.10.0",
+    "webpack-dev-server": "2.9.7"
+  },
+  "dependencies": {
+    "html-webpack-plugin": "2.30.1",
+    "moment": "^2.21.0",
+    "prop-types": "15.6.0",
+    "rc-pagination": "^1.16.0",
+    "react": "16.2.0",
+    "react-alert": "^3.4.0",
+    "react-dom": "16.2.0",
+    "react-router-dom": "5.0.1",
+    "simditor": "2.3.6",
+    "sweetalert2": "^7.15.1"
+  }
+}
