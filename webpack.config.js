@@ -9,8 +9,8 @@ const webpack = require('webpack');
 let WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
 console.log('当前打包使用的环境是:' + WEBPACK_ENV);
 module.exports = {
-    entry:{
-        'app':['./src/index.jsx']
+    entry: {
+        'app': ['./src/index.jsx']
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -38,8 +38,9 @@ module.exports = {
                         plugins: [
                             ["import", {
                                 "libraryName": "antd",
-                                "style": "css"
-                            }]
+                                "style": "css",
+                            }],
+
                         ]
                     }
                 }

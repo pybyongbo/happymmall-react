@@ -1,3 +1,4 @@
+import swal from 'sweetalert2';
 class Util {
     request(param) {
         return new Promise((resolve, reject) => {
@@ -45,6 +46,42 @@ class Util {
     //错误提示
     errTips(errMsg){
         alert(errMsg || '操作失败!')
+    }
+
+     /**
+     * 输入框
+     * @param  {[type]} text [description]
+     * @return {[type]}      [description]
+     */
+    promptDialog(text, name, callBack) {
+        swal({
+            title: text,
+            input: 'text',
+            inputValue: name,
+            showCancelButton: true,
+            confirmButtonText: '确认',
+            cancelButtonText: '取消'
+        }).then((value) => {
+            callBack(value);
+        });
+    }
+    /**
+     * 确认框
+     * @param  {[type]} text [description]
+     * @return {[type]}      [description]
+     */
+    comfirmDialog(text, callBack) {
+        swal({
+            title: text,
+            type: 'info',
+            showCancelButton: true,
+            confirmButtonText: '确认',
+            cancelButtonText: '取消'
+        }).then((result) => {
+            if (result.value) {
+                callBack();
+            }
+        })
     }
 
     setStorage(name,data) {

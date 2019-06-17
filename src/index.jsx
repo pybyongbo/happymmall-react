@@ -11,7 +11,7 @@ import Login from 'page/login/index.jsx';
 //用户列表页面
 // import UserList from 'page/user/index.jsx';
 //商品分路由
-// import ProductRouter from 'page/product/route.jsx';
+import ProductRouter from 'page/product/route.jsx';
 //订单列表页面
 // import OrderList from 'page/order/index.jsx';
 //订单详情页面
@@ -24,8 +24,8 @@ class App extends React.Component {
         <Layout>
             <Switch>
                 <Route exact path="/" component={Home}/>
-                {/* <Route path="/product" component={ProductRouter}/>
-                <Route path="/product-category" component={ProductRouter}/>
+                <Route path="/product" component={ProductRouter}/>
+                {/* <Route path="/product-category" component={ProductRouter}/>
                 <Route path="/order/index" component={OrderList}/>
                  <Route path="/order/detail/:orderNo" component={OrderDetail}/>
                 <Route path="/user/index" component={UserList}/>
