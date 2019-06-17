@@ -34,12 +34,14 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['env', 'react'],
+                        presets: ['env', 'react','es2015'],
                         plugins: [
                             ["import", {
                                 "libraryName": "antd",
-                                "style": "css"
-                            }]
+                                "style": "css",
+                            }],
+                            "transform-runtime",
+                            'transform-remove-strict-mode'
                         ]
                     }
                 }
