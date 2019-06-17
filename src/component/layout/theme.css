@@ -321,6 +321,7 @@ footer p {
 }
 .navbar-brand b {
 	color: #2DAFCB;
+	float:left;
 }
 .top-navbar .nav > li {
 	position: relative;
