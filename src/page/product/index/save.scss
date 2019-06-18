@@ -1,0 +1,103 @@
+.detailpage-wrapper{
+    width:60%;
+    margin:0 auto;
+}
+
+.form-group{
+    overflow: hidden;
+    label{
+        float:left;
+        line-height:40px;
+        font-size:14px;
+    }
+    .col-md-5,.col-md-10{
+        p.form-control-static{
+            line-height:28px;
+        }
+    }
+}
+
+.savepage {
+    label{
+        line-height:28px;
+    }
+}
+
+$sub-img-size:80px;
+.img-con{
+	width: $sub-img-size;
+	height: $sub-img-size;
+	float: left;
+	margin-right: 10px;
+	border: 1px solid  #ccc;
+	position: relative;
+	img{
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+	.fa-close{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		text-align: center;
+		height: $sub-img-size;
+		line-height: $sub-img-size;
+		cursor: pointer;
+		display: none;
+		font-size: 40px;
+		color: #aaa;
+		background:rgba(0,0,0,.2);
+	}
+	&:hover{
+		.fa-close{
+			display: block;
+		}
+	}
+}
+
+.add {
+    display: inline-block;
+    width: 76px; height: 76px;
+    color: #ccc;
+    border: 2px dashed;
+    position: relative;
+    left:15px;
+    .fa-plus{
+        position: absolute;
+        top: 23px;
+        left: 24px;
+        font-size: 30px;
+    }
+    input{
+        // display: block!important;
+        width:100px;
+        height:100px;
+        // background:red;
+        position:absolute;
+        left:0;
+        top:0;
+    }
+  
+}
+.add:hover {
+    color: #34538b;
+}
+.add::before, .add::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.add::before {
+    width: 20px;
+    border-top: 4px solid;
+    margin: -2px 0 0 -10px;
+}
+.add::after {
+    height: 20px;
+    border-left: 4px solid;
+    margin: -10px 0 0 -2px;
+}
