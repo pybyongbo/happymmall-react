@@ -28,7 +28,6 @@ class ProductSave extends React.Component {
             detail:'',
             status:1
         }
-
     }
     componentDidMount(){
         this.loadProduct();
@@ -47,6 +46,7 @@ class ProductSave extends React.Component {
                         }
                     })
                 }
+                res.defaultDetail = res.detail;
                 this.setState(res);
             },(errMsg)=>{
                 _mm.errTips(errMsg)
@@ -64,6 +64,7 @@ class ProductSave extends React.Component {
 
     //上传图片成功
     uploadOnSuccess(res){
+        console.log(res);
         let subImages = this.state.subImages;
         subImages.push(res);
         this.setState({
@@ -73,7 +74,8 @@ class ProductSave extends React.Component {
 
     //上传图片失败
     uploadOnError(errMsg){
-        _mm.errorTips(errMsg);
+        console.log(errMsg);
+        _mm.errTips(errMsg);
     }
 
     //富文本改变事件
@@ -116,7 +118,7 @@ class ProductSave extends React.Component {
             price:parseFloat(this.state.price),
             stock:parseInt(this.state.stock),
             status:this.state.status
-        }
+        },
         result = _product.checkProductParam(param);
         param.id = this.state.id ? this.state.id : null;
         if (result.status) {
@@ -143,7 +145,7 @@ class ProductSave extends React.Component {
                 this.uploadOnSuccess(res);
             },
             onError = (err) => {
-                this.uploadOnError(res);
+                this.uploadOnError(err);
             },
             onRichEditorChange = (value) => {
                 this.onRichEditorChange(value);
@@ -159,7 +161,7 @@ class ProductSave extends React.Component {
             };
         return (
             <div id="page-wrapper" className="savepage detailpage-wrapper">
-                <PageTitle title={this.state.id ? "编辑商品" : "添加商品"}/>
+                <PageTitle title={this.state.id ? "编辑商品" : "添加商品"} gobackTitle="返回" gobackUrl="/product/index"/>
                 <div className="form-horizontal">
                     <div className="form-group">
                         <label className="col-md-2 control-label">商品名称</label>

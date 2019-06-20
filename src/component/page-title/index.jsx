@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { Route,Link, NavLink } from 'react-router-dom';
+import './index.scss'
 class PageTitle extends React.Component{
     constructor(props){
         super(props);
@@ -7,6 +8,9 @@ class PageTitle extends React.Component{
 
     componentWillMount(){
         document.title = this.props.title+'- HAPPY MMALL';
+    }
+    goBack(url){
+        this.props.history.push(url);
     }
 
     render(){
@@ -17,6 +21,14 @@ class PageTitle extends React.Component{
                         {this.props.title}
                     </h1>
                     {this.props.children}
+
+                    <Link to={this.props.gobackUrl} className="goback">
+                        {this.props.gobackTitle}
+                    </Link>
+
+                    {/* <Link to="/">Home</Link> */}
+
+                    {/* <a href=""></a> */}
                 </div>
             </div>
         );

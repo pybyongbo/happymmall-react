@@ -46,7 +46,7 @@ class CategorySelector extends React.Component {
     loadFirstCategory() {
         _product.getCategoryList().then((res) => {
             this.setState({
-                firstCategoryList: res.data
+                firstCategoryList: res
             })
         }, (err) => {
             _mm.errTips(err.msg);
@@ -56,7 +56,7 @@ class CategorySelector extends React.Component {
     loadSecondCategory() {
         _product.getCategoryList(this.state.firstCategoryId).then((res) => {
             this.setState({
-                secondCategoryList: res.data
+                secondCategoryList: res
             })
         }, (err) => {
             _mm.errTips(err.msg);

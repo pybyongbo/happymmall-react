@@ -72,7 +72,6 @@ class ProductList extends React.Component{
             pageNum:1
          },()=>{
             this.loadProductList();
-
          });
 
       }
@@ -173,7 +172,7 @@ class ProductList extends React.Component{
         }
         return (
             <div id="page-wrapper">
-                <PageTitle title="商品列表">
+                <PageTitle title="商品列表" gobackUrl="/" gobackTitle="返回首页">
                     <div className="page-header-right">
                         <Link to="/product/save" className="btn btn-primary">
                             <i className="fa fa-plus"/>

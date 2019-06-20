@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Loading from '../loading/index.jsx'
 class TableList extends React.Component {
     constructor(props) {
         super(props);
@@ -23,7 +23,7 @@ class TableList extends React.Component {
             listBody = this.props.children,
             listError = (
             <tr>
-				<td colSpan={this.props.tableHeads.length} className="text-center">{this.state.isFirstLoading ? "正在拼命加载数据..." : "没有找到相应的结果～"}</td>
+				<td colSpan={this.props.tableHeads.length} className="text-center">{this.state.isFirstLoading ? <Loading type="spin" color="#f60" className="loadingstyle" /> : "没有找到相应的结果～"}</td>
 			</tr>
             ),
             tableBody = listBody.length > 0 ? listBody : listError;

@@ -63,7 +63,7 @@ class ProductDetail extends React.Component{
 
         return (
             <div id="page-wrapper" className="detailpage-wrapper">
-                <PageTitle title="商品详情"></PageTitle>
+                <PageTitle title="商品详情" gobackTitle="返回" gobackUrl="/product/index"></PageTitle>
 
                 <div className="from-horizontal">
                     <div className="form-group">
