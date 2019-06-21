@@ -20,7 +20,6 @@ class CategoryList extends React.Component{
     }
 
     componentDidMount() {
-        console.log("000")
         this.loadCategoryList();
     }
 

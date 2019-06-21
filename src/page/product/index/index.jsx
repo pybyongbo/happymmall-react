@@ -74,7 +74,7 @@ class ProductList extends React.Component{
             this.loadProductList();
          });
 
-      }
+    }
 
     // onShowSizeChange (pageSize) {
     //     console.log(pageSize);

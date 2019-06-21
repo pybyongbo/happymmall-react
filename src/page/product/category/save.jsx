@@ -69,7 +69,7 @@ class CategorySave extends React.Component{
         let list = this.state.list,
         parentCategoryId = this.state.parentCategoryId,
         categoryOptions = list.map((category,index)=>{
-            return <option key={index} value={category.id}>跟品类{category.name}</option>
+            return <option key={index} value={category.id}>跟品类/{category.name}</option>
         }),
         onKeyUpEvent = (e) =>{
             this.onKeyUp(e)

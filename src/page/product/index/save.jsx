@@ -64,8 +64,7 @@ class ProductSave extends React.Component {
 
     //上传图片成功
     uploadOnSuccess(res){
-        console.log(res);
-        let subImages = this.state.subImages;
+        let subImages = this.state.subImages || [];
         subImages.push(res);
         this.setState({
             subImages:subImages
@@ -74,7 +73,6 @@ class ProductSave extends React.Component {
 
     //上传图片失败
     uploadOnError(errMsg){
-        console.log(errMsg);
         _mm.errTips(errMsg);
     }
 
@@ -104,7 +102,10 @@ class ProductSave extends React.Component {
     }
 
     getSubImagesString(){
-        return this.state.subImages.map((image) => image.uri).join(',');
+        if(this.state.subImages && this.state.subImages.length>0) {
+            return this.state.subImages.map((image) => image.uri).join(',');
+        }
+        
     }
 
     //提交事件
@@ -146,6 +147,7 @@ class ProductSave extends React.Component {
             },
             onError = (err) => {
                 this.uploadOnError(err);
+                console.log()
             },
             onRichEditorChange = (value) => {
                 this.onRichEditorChange(value);

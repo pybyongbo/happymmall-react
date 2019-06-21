@@ -21,6 +21,7 @@ class FileUploader extends React.Component{
                     this.props.onSuccess(res.data)
                 },
                 uploadError: (err) => {
+                    console.log(err)
                     this.props.onError(err.msg || '上传图片失败');
                 }
             },

@@ -54,13 +54,14 @@ class User {
      * @param  {[type]} pageNum [description]
      * @return {[type]}         [description]
      */
-    getUserList(pageNum) {
+    getUserList(param) {
+        let data = {};
+        data.pageSize = param.pageSize;
+        data.pageNum = param.pageNum;
         return _mm.request({
             type: 'post',
             url: '/manage/user/list.do',
-            data: {
-                pageNum: pageNum
-            }
+            data: data
         })
     }
 

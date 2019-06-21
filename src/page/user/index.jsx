@@ -19,8 +19,10 @@ class UserList extends React.Component{
         this.state = {
             list:[],
             pageNum:1,
+            pageSize:20,
             total:0
         }
+        this.onShowSizeChange = this.onShowSizeChange.bind(this);
     }
 
     componentDidMount(){
@@ -28,9 +30,12 @@ class UserList extends React.Component{
     }
 
     loadUserList(){
-        let pageNum = this.state.pageNum;
-        _user.getUserList(pageNum).then((res) => {
-            console.log(res);
+
+        let param = {
+            pageNum:this.state.pageNum,
+            pageSize:this.state.pageSize
+        }
+        _user.getUserList(param).then((res) => {
             this.setState({
                 list:res.list,
                 total:res.total
@@ -50,10 +55,20 @@ class UserList extends React.Component{
             this.loadUserList();
         })
     }
+    onShowSizeChange(current,pageSize){
+        console.log(pageSize);
+        this.setState({ 
+            pageSize:pageSize,
+            pageNum:1
+         },()=>{
+            this.loadUserList();
+         });
+    }
 
     render(){
         let list = this.state.list,
         pageNum = this.state.pageNum,
+        pageSize = this.state.pageSize,
         total = this.state.total,
         listBody = list.map((user,index)=>{
             return (
@@ -71,12 +86,11 @@ class UserList extends React.Component{
         return (
             <div id="page-wrapper">
                 <PageTitle title="用户列表" gobackUrl="/" gobackTitle="返回首页"></PageTitle>
-
                 <TableList tableHeads= {['用户ID','用户名','邮箱','电话','注册时间']}>
                     {listBody}
                 </TableList>
                 <div style={{float:'right'}}>
-                    <Pagination current={pageNum} total={total} onChange={(pageNum) => this.onPageNumChange(pageNum)}/>
+                    <Pagination current={pageNum} total={total} defaultPageSize={this.state.pageSize} onChange={(pageNum) => this.onPageNumChange(pageNum)} onShowSizeChange={this.onShowSizeChange} />
                 </div>
             </div>
         )
