@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import PageTitle from 'component/page-title/index.jsx';
 import Pagination from 'component/pagination/index.jsx';
 import TableList from 'component/table-list/index.jsx';
-
+import ListSearch from './list-search.jsx';
 import Moment from 'moment';
 
 import MUtil from 'util/mm.jsx';
@@ -71,7 +71,7 @@ class OrderList extends React.Component {
     }
 
     onSearch(searchType,searchKeyword){
-        let listType = serachKeyword === ''?'list':'search';
+        let listType = searchKeyword === ''?'list':'search';
         this.setState({
             listType:listType,
             pageNum:1,
@@ -103,11 +103,11 @@ class OrderList extends React.Component {
         tableHeads = [
             {
                 name:'订单号',
-                width:'10%'
+                width:'20%'
             },
             {
                 name:'收件人',
-                width:'50%'
+                width:'40%'
             },
             {
                 name:'订单状态',
@@ -152,6 +152,7 @@ class OrderList extends React.Component {
         return(
             <div id="page-wrapper" className="nobtn-wrapper">
                 <PageTitle title="订单列表" gobackUrl="/" gobackTitle="返回首页"></PageTitle>
+                <ListSearch onSearch={onSearch}/>
                 <TableList tableHeads={tableHeads}>
                     {listBody}
                 </TableList>

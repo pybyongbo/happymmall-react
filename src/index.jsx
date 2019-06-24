@@ -7,7 +7,7 @@ import Home from 'page/home/index.jsx';
 //Login页面
 import Login from 'page/login/index.jsx';
 //错误页面
-// import ErrorPage from 'page/error/index.jsx';
+import ErrorPage from 'page/error/index.jsx';
 //用户列表页面
 import UserList from 'page/user/index.jsx';
 //商品分路由
@@ -31,7 +31,7 @@ class App extends React.Component {
                 <Route path="/user/index" component={UserList}/>
                 <Redirect exact from="/user" to="/user/index"/>
                 <Redirect exact from="/order" to="/order/index"/>
-                {/* <Route component={ErrorPage}/>  */}
+                <Route component={ErrorPage}/> 
             </Switch>
         </Layout>
         );

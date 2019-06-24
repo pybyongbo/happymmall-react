@@ -96,7 +96,7 @@ class OrderDetail extends React.Component {
                 : null;
     return (
         <div id="page-wrapper" className="detailpage-wrapper nobtn-wrapper">
-            <PageTitle title="订单详情" gobackUrl="/" gobackTitle="返回首页"/>
+            <PageTitle title="订单详情" gobackUrl="/order/index" gobackTitle="返回首页"/>
             <div className="form-horizontal">
                     <div className="form-group">
                         <label className="col-md-2 control-label">订单号</label>

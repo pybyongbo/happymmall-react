@@ -2,7 +2,8 @@ import  React from 'react';
 import {Link} from 'react-router-dom';
 
 
-import PageTitle from 'component/page-title/index.jsx'
+import PageTitle from 'component/page-title/index.jsx';
+import ListSearch from './list-search.jsx';
 import Pagination from 'component/pagination/index.jsx';
 import TableList from 'component/table-list/index.jsx';
 import Moment from 'moment';
@@ -180,7 +181,7 @@ class ProductList extends React.Component{
                         </Link>
                     </div>
                 </PageTitle>
-                {/* <ListSearch onSearch={onSearch}/> */}
+                <ListSearch onSearch={onSearch}/>
                 <TableList tableHeads={tableHeads}>
                     {listBody}
                 </TableList>
