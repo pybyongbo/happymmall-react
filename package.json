@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --progress --config webpack.config.js --inline",
-    "dev": "WEBPACK_ENV=dev webpack-dev-server --host 0.0.0.0  --progress --config webpack.config.js --inline",
-    "dev_win": "set WEBPACK_ENV=dev && webpack-dev-server --port 8086 --inline",
+    "dev": "WEBPACK_ENV=dev webpack-dev-server --progress --config webpack.config.js --inline",
+    "dev_win": "set WEBPACK_ENV=dev && webpack-dev-server --inline",
     "dist": "WEBPACK_ENV=online webpack -p",
     "dist_win": "set WEBPACK_ENV=online && webpack -p"
   },

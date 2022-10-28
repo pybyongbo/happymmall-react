@@ -26,8 +26,8 @@ class App extends React.Component {
                 <Route exact path="/" component={Home}/>
                 <Route path="/product" component={ProductRouter}/>
                 <Route path="/product-category" component={ProductRouter}/>
-                  <Route path="/order/index" component={OrderList}/>
-                 <Route path="/order/detail/:orderNo" component={OrderDetail}/>
+                <Route path="/order/index" component={OrderList}/>
+                <Route path="/order/detail/:orderNo" component={OrderDetail}/>
                 <Route path="/user/index" component={UserList}/>
                 <Redirect exact from="/user" to="/user/index"/>
                 <Redirect exact from="/order" to="/order/index"/>

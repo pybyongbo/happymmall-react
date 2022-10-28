@@ -14,7 +14,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        publicPath: WEBPACK_ENV === 'online' ? '//s.happymall.shop/admin-fe/dist/' : '/dist/',
+        publicPath: WEBPACK_ENV === 'online' ? 'http://firekylin.901web.com/' : '/dist/',
         filename: 'js/app.js'
     },
     resolve: {
